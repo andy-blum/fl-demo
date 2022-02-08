@@ -1,0 +1,6 @@
+# DEMO PURPOSES ONLY
+# NORMALLY THIS SHOULD BE IGNORED
+# /.gitignore
+# /settings.ddev.php
+
+/drushrc.php

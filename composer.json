@@ -16,11 +16,13 @@
     ],
     "require": {
         "composer/installers": "^1.9",
+        "cweagans/composer-patches": "^1.7",
         "drupal/core-composer-scaffold": "^9.3",
         "drupal/core-project-message": "^9.3",
         "drupal/core-recommended": "^9.3",
         "drupal/devel": "^4.1",
-        "drush/drush": "^11.0"
+        "drush/drush": "^11.0",
+        "kint-php/kint": "^4.1"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -32,7 +34,8 @@
         "allow-plugins": {
             "composer/installers": true,
             "drupal/core-composer-scaffold": true,
-            "drupal/core-project-message": true
+            "drupal/core-project-message": true,
+            "cweagans/composer-patches": true
         }
     },
     "extra": {
@@ -93,6 +96,11 @@
                 "  * Remove the plugin that prints this message:",
                 "      composer remove drupal/core-project-message"
             ]
+        },
+        "patches": {
+          "drupal/devel": {
+            "Issue #221: enable available methods tab in kint": "https://raw.githubusercontent.com/politsin/snipets/master/patch/kint.patch"
+          }
         }
     }
 }

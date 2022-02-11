@@ -1,6 +1,10 @@
 {
   "folders": [
     {
+      "name": "Foomami",
+      "path": "./web/themes/custom/foomami"
+    },
+    {
       "name": "Project Root",
       "path": "."
     }
@@ -12,9 +16,9 @@
         "type": "php",
         "request": "launch",
         "hostname": "0.0.0.0",
-        "port": 9000,
+        "port": 9003,
         "pathMappings": {
-          "/var/www/html": "${workspaceFolder}"
+          "/var/www/html": "${workspaceFolder:Project Root}"
         }
       }
     ]
@@ -22,6 +26,7 @@
   "extensions": {
     "recommendations": [
       "xdebug.php-debug",
+      "andrewdavidblum.drupal-smart-snippets",
     ]
   }
 }

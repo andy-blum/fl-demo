@@ -3,7 +3,7 @@
     attach: () => {
       const textInputs = once(
         'foomami-color',
-        '[data-drupal-selector="edit-primary-color"]',
+        '[data-drupal-selector="foomami-color-picker"] > input[type="text"]',
       );
 
       textInputs.forEach(textInput => {

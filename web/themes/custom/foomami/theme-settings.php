@@ -17,15 +17,15 @@ function foomami_form_system_theme_settings_alter(&$form, FormStateInterface $fo
     '#open' => true,
   ];
 
-  // Create a text input field
-  $form['foomami_settings']['primary_color'] = [
+  // Create a field template
+  $color_input = [
     '#type' => 'textfield',
     '#maxlength' => 7,
     '#size' => 10,
-    '#title' => t('Primary Color'),
+    # '#title' => t('Primary Color'),
     '#description' => t("Enter color in full hexadecimal format (#abc123).<br/>
       Derivatives will be formed from this color."),
-    '#default_value' => theme_get_setting('primary_color'),
+    # '#default_value' => theme_get_setting('primary_color'),
     '#attributes' => [
       'pattern' => '^#[a-fA-F0-9]{6}',
     ],
@@ -33,4 +33,18 @@ function foomami_form_system_theme_settings_alter(&$form, FormStateInterface $fo
       'data-drupal-selector' => 'foomami-color-picker',
     ],
   ];
+
+  // Create a field for each color
+  $form['foomami_settings']['primary_color'] = $color_input;
+  $form['foomami_settings']['primary_color']['#title'] = t('Primary Color');
+  $form['foomami_settings']['primary_color']['#default_value'] = theme_get_setting('primary_color');
+
+  $form['foomami_settings']['secondary_color'] = $color_input;
+  $form['foomami_settings']['secondary_color']['#title'] = t('Secondary Color');
+  $form['foomami_settings']['secondary_color']['#default_value'] = theme_get_setting('secondary_color');
+
+  $form['foomami_settings']['accent_color'] = $color_input;
+  $form['foomami_settings']['accent_color']['#title'] = t('Accent Color');
+  $form['foomami_settings']['accent_color']['#default_value'] = theme_get_setting('accent_color');
+
 }

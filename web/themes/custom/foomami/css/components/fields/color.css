@@ -1,0 +1,4 @@
+[data-drupal-selector="foomami-color-picker"] > input[type="text"] + .form-element--type-color {
+  margin-left: 0.8125rem;
+  vertical-align: bottom;
+}

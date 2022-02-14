@@ -16,6 +16,28 @@ use Drupal\views\Form\ViewsForm;
  * Adds body classes if certain regions have content.
  */
 function foomami_preprocess_html(&$variables) {
+  $cssVars = [];
+  $theme_colors = [
+    'primary',
+    'secondary',
+    'accent',
+  ];
+
+  foreach ($theme_colors as $color_name) {
+    $hex = theme_get_setting($color_name . '_color');
+
+    if ($hex) {
+
+      $hsl = _hexToHsl($hex);
+
+      $cssVars[] = "--h-$color_name:$hsl[0]";
+      $cssVars[] = "--s-$color_name:$hsl[1]";
+      $cssVars[] = "--l-$color_name:$hsl[2]";
+    }
+  }
+
+  $variables['html_attributes']->setAttribute('style', implode(';', $cssVars) . ';');
+
   // Add a sidebar class if the sidebar has content in it.
   if (!empty($variables['page']['sidebar'])) {
     $variables['attributes']['class'][] = 'two-columns';

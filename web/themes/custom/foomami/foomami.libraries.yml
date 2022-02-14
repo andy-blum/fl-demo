@@ -251,4 +251,6 @@ theme_settings:
       css/components/fields/color.css: {}
   js:
     js/components/fields/color.js: {}
-
+  dependencies:
+  - core/drupal
+  - core/once

@@ -1,7 +1,8 @@
-((Drupal) => {
+((Drupal, once) => {
   Drupal.behaviors.foomami_color = {
     attach: () => {
-      const textInputs = document.querySelectorAll(
+      const textInputs = once(
+        'foomami-color',
         '[data-drupal-selector="edit-primary-color"]',
       );
 
@@ -13,4 +14,4 @@
       })
     },
   };
-})(Drupal);
+})(Drupal, once);

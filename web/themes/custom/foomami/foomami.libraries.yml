@@ -243,3 +243,12 @@ classy.search-results:
   css:
     component:
       css/classy/components/search-results.css: {}
+
+theme_settings:
+  version: "1.0.0"
+  css:
+    component:
+      css/components/fields/color.css: {}
+  js:
+    js/components/fields/color.js: {}
+

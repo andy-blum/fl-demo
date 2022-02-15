@@ -254,3 +254,9 @@ theme_settings:
   dependencies:
   - core/drupal
   - core/once
+
+menu_devel:
+  version: "1.0.0"
+  css:
+    component:
+      css/components/navigation/menu-devel/menu-devel.css: {}

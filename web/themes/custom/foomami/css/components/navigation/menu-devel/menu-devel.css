@@ -1,0 +1,39 @@
+.menu-devel {
+  display: flex;
+}
+
+.menu-devel,
+.menu-devel ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-devel a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+}
+
+.menu-devel.menu-level-1 > li {
+  position: relative;
+  z-index: 2;
+}
+
+.menu-devel .menu-level-2 {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 0.5rem;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.menu-devel > li:hover .menu-level-2,
+.menu-devel > li:focus-within .menu-level-2 {
+  display: block;
+  width: max-content;
+  min-width: 10rem;
+  max-width: 25rem;
+}

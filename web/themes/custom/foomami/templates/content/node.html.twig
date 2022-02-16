@@ -79,8 +79,8 @@
 {% set created_date = node.getCreatedTime|format_date('foomami_dates') %}
 {{ attach_library('foomami/classy.node') }}
 
-{{ kint(_context|keys) }}
-{{ kint() }}
+{{ kint(node.id()) }}
+{{ kint(node.bundle()) }}
 
 <article{{ attributes.addClass(classes) }}>
 

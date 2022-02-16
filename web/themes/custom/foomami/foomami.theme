@@ -64,9 +64,8 @@ function foomami_preprocess_node(&$variables) {
       !$referencedEntity->field_media_image->isEmpty()
     ) {
       $image = $referencedEntity->field_media_image->referencedEntities()[0];
-      $image_uri = $image->uri[0]->value;
-
-      $variables['media_image_uri'] = $image_uri;
+      $image_url = $image->createFileUrl();
+      $variables['media_image_url'] = $image_url;
     }
   }
 }

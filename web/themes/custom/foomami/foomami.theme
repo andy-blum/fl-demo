@@ -49,6 +49,28 @@ function foomami_preprocess_html(&$variables) {
 }
 
 /**
+ * Implements hook_preprocess_HOOK().
+ */
+function foomami_preprocess_node(&$variables) {
+  $node = $variables['node'];
+  if (
+    $node->hasField('field_media_image') &&
+    !$node->field_media_image->isEmpty()
+  ) {
+    $referencedEntity = $node->field_media_image->referencedEntities()[0];
+
+    if (
+      $referencedEntity->hasField('field_media_image') &&
+      !$referencedEntity->field_media_image->isEmpty()
+    ) {
+      $image = $referencedEntity->field_media_image->referencedEntities()[0];
+      $image_uri = $image->uri[0]->value;
+      kint($image_uri);
+    }
+  }
+}
+
+/**
  * Implements hook_preprocess_field().
  */
 function foomami_preprocess_field(&$variables, $hook) {

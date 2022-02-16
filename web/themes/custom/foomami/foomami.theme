@@ -109,11 +109,31 @@ function foomami_theme_suggestions_search_result_alter(array &$suggestions, arra
     if (!$difficulty_field->isEmpty()) {
       $difficulty = $difficulty_field->get(0)->getValue()['value'];
 
-      $suggestions[] = 'search_result__difficulty_' . $difficulty;
+      if ($difficulty) {
+        $suggestions[] = 'search_result__difficulty_' . $difficulty;
+      }
     }
   }
 
+  if ($node->hasField('field_tags') && !$node->field_tags->isEmpty()) {
+    $tags = $node->field_tags->getValue();
 
+    $dietary_tags = [
+      'vegan',
+      'dairy-free',
+      'vegetarian'
+    ];
+
+    foreach ($tags as $tag) {
+      $tid = $tag['target_id'];
+      $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($tid);
+      $term_name = strtolower($term->label());
+
+      if (in_array($term_name, $dietary_tags)) {
+        $suggestions[] = 'search_result__dietary_' . $term_name;
+      }
+    }
+  }
 }
 
 /**

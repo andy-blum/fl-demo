@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "89f1e769569b8aeca016a859bd7b944a",
+    "content-hash": "e1d80a98f0ba2d16e2226af6798ace46",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3015,6 +3015,52 @@
                 "source": "https://github.com/kint-php/kint/tree/4.1.1"
             },
             "time": "2022-01-02T10:30:48+00:00"
+        },
+        {
+            "name": "kint-php/kint-twig",
+            "version": "4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kint-php/kint-twig.git",
+                "reference": "5fdb325ddd4cb988dfa40a0f290d16e38b884d03"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kint-php/kint-twig/zipball/5fdb325ddd4cb988dfa40a0f290d16e38b884d03",
+                "reference": "5fdb325ddd4cb988dfa40a0f290d16e38b884d03",
+                "shasum": ""
+            },
+            "require": {
+                "kint-php/kint": "^4",
+                "twig/twig": "^2.4 || ^3.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.0",
+                "phpunit/phpunit": "^9.0",
+                "vimeo/psalm": "^4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Kint\\Twig\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Jonathan Vollebregt",
+                    "email": "jnvsor@gmail.com"
+                }
+            ],
+            "description": "Twig extension for Kint integration",
+            "support": {
+                "issues": "https://github.com/kint-php/kint-twig/issues",
+                "source": "https://github.com/kint-php/kint-twig/tree/4.0"
+            },
+            "time": "2022-02-10T17:55:16+00:00"
         },
         {
             "name": "laminas/laminas-diactoros",

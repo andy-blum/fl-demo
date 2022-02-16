@@ -22,7 +22,8 @@
         "drupal/core-recommended": "^9.3",
         "drupal/devel": "^4.1",
         "drush/drush": "^11.0",
-        "kint-php/kint": "^4.1"
+        "kint-php/kint": "^4.1",
+        "kint-php/kint-twig": "^4.0"
     },
     "conflict": {
         "drupal/drupal": "*"

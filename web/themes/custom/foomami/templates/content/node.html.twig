@@ -79,8 +79,13 @@
 {% set created_date = node.getCreatedTime|format_date('foomami_dates') %}
 {{ attach_library('foomami/classy.node') }}
 
-{{ kint(node.id()) }}
-{{ kint(node.bundle()) }}
+{% set now = "now"|date('U') %}
+{% set created = node.getCreatedTime() %}
+{% set two_weeks = (60 * 60 * 24 * 14) %}
+
+{% set age = now - created < two_weeks ? 'new' : 'old' %}
+
+{{ kint(age) }}
 
 <article{{ attributes.addClass(classes) }}>
 

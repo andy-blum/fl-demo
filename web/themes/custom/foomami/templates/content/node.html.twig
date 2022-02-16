@@ -79,8 +79,11 @@
 {% set created_date = node.getCreatedTime|format_date('foomami_dates') %}
 {{ attach_library('foomami/classy.node') }}
 
-{{ kint(content.field_ingredients.0['#title']['#context'].value)}}
-{{ kint(node.field_ingredients.get(0).getValue().value) }}
+{% set media_id = node.field_media_image.get(0).getValue()['target_id'] %}
+{# twig_tweak: {% set media_entity = drupal_entity('media', media_id) %} #}
+
+{{ kint(media_id) }}
+{# {{ kint(media_entity) }} #}
 
 <article{{ attributes.addClass(classes) }}>
 

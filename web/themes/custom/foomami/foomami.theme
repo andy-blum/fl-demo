@@ -93,6 +93,15 @@ function foomami_theme_suggestions_search_result_alter(array &$suggestions, arra
 
   $suggestions[] = 'search_result__type_' . $node->bundle();
   array_unshift($suggestions, 'search_result__id_' . $node->id());
+
+  $now = intval((new DateTime())->format('U'));
+  $created = intval($node->getCreatedTime());
+  $two_weeks = 60 * 60 * 24 * 14;
+  $age_suggestion = $now - $created < $two_weeks ?
+    'search_result__age_new' :
+    'search_result__age_old';
+
+  $suggestions[] = $age_suggestion;
 }
 
 /**

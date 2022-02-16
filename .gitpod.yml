@@ -1,4 +1,15 @@
 image: drupalpod/drupalpod-gitpod-base:20220208-optimized
+
+# ddev and composer are running as part of the prebuild
+# when starting a workspace all docker images are ready
+tasks:
+  - init: |
+      ddev debug download-images
+      .gitpod/drupal-setup.sh
+    command: |
+      echo y | ddev start
+      gp preview $(gp url 8080)
+
 vscode:
   extensions:
     # PHP extensions.

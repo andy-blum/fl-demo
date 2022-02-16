@@ -102,6 +102,18 @@ function foomami_theme_suggestions_search_result_alter(array &$suggestions, arra
     'search_result__age_old';
 
   $suggestions[] = $age_suggestion;
+
+  if ($node->hasField('field_difficulty')) {
+    $difficulty_field = $node->get('field_difficulty');
+
+    if (!$difficulty_field->isEmpty()) {
+      $difficulty = $difficulty_field->get(0)->getValue()['value'];
+
+      $suggestions[] = 'search_result__difficulty_' . $difficulty;
+    }
+  }
+
+
 }
 
 /**

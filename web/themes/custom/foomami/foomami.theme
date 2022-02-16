@@ -65,7 +65,8 @@ function foomami_preprocess_node(&$variables) {
     ) {
       $image = $referencedEntity->field_media_image->referencedEntities()[0];
       $image_uri = $image->uri[0]->value;
-      kint($image_uri);
+
+      $variables['media_image_uri'] = $image_uri;
     }
   }
 }

@@ -81,6 +81,9 @@
 
 <article{{ attributes.addClass(classes) }}>
 
+  {% set url = file_url(media_image_uri) %}
+  {{ kint(url) }}
+
   {{ title_prefix }}
   {% if label %}
     {% if page %}
